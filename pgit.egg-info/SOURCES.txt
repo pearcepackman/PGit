@@ -1,0 +1,9 @@
+README.md
+setup.py
+pgit/__init__.py
+pgit/cli.py
+pgit.egg-info/PKG-INFO
+pgit.egg-info/SOURCES.txt
+pgit.egg-info/dependency_links.txt
+pgit.egg-info/entry_points.txt
+pgit.egg-info/top_level.txt
