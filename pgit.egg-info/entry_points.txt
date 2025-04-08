@@ -1,2 +1,2 @@
 [console_scripts]
-pgit = pgit.cli
+pgit = pgit.cli:main
