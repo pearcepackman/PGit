@@ -3,7 +3,7 @@ import sys
 import os
 from datetime import datetime
 
-
+#Main func gets called
 def main(): 
     parser = argparse.ArgumentParser()
     subparser = parser.add_subparsers(dest="command", required=True)
@@ -94,3 +94,4 @@ def history(path, action):
             file.write(entry)
     except:
         print('failed to write')
+        
