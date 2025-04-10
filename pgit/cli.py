@@ -3,6 +3,7 @@ import sys
 import os
 from datetime import datetime
 
+current_repo = 'stinky'
 #Main func gets called
 def main(): 
     parser = argparse.ArgumentParser()
@@ -32,6 +33,11 @@ def main():
     getallrepos_parser = subparser.add_parser("allrepos")
     getallrepos_parser.set_defaults(func = getallrepos)
 
+    createreadme_parser = subparser.add_parser("makemd")
+    createreadme_parser.add_argument("name")
+    createreadme_parser.set_defaults(func = createreadme)
+    print(current_repo)
+
     args = parser.parse_args()
     if hasattr(args, 'func'):
         args.func(args)
@@ -59,14 +65,25 @@ def getallrepos(args=None):
 
 def setcurrentrepo(args):
     print("")
-    project_path = args.location
+    print(f"Location Updated: {args.location}")
+    global current_repo
+    current_repo = args.location
+    print(current_repo)
     os.chdir(args.location)
-    print("Location changed!")
+    print("")
+    
+    return args.location
+    
+    
+
+def getcurrentrepo(args=None):
+    print("")#NOT WORKING AT ALL LOL
+    print(f"Current Repo: {current_repo}")
     print("")
 
-def getcurrentrepo():
-    print("")#NOT WORKING AT ALL LOL
-    print(f"Current Repo: ")
+def createreadme(args):
+    print("")
+    
     print("")
 
 def init(args):
